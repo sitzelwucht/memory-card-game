@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header><h1>Memory Card Game</h1></header>
+
+    <div class="wrapper">
+        <img src="icons/reload.svg" height="55" id="refresh" class="hidden" title="start over" onclick="location.reload()">
+        <div class="score-board hidden" >
+            <div class="sub-header">Moves: <span id="moves-display"></span></div>
+            
+            <div class="sub-header">Time: <span id="time-display"></span></div>
+
+            <div class="feedback-icon">
+         
+                <img src="icons/service.svg" height="100"  id="place-one" class="hidden" >
+                <img src="icons/welldone.svg" height="100" class="hidden" id="place-two">
+                <img src="icons/feedback.svg" height="100" class="hidden" id="place-three">
+                <img src="icons/check.svg" height="100" class="hidden" id="place-four">
+                <img src="icons/lemonade.svg" height="100" class="hidden" id="place-five">
+
+            </div>
+            
+        </div>
+
+        <div class="card-grid-small hidden">
+        </div>
+
+        <div class="card-grid-large hidden">
+        </div>
+
+
+        <div class="size-select">
+            <form>
+                <label for="size" id="label">Select size of board:</label>
+                <br>
+                <input type="radio" id="size-4" name="size" value="4" required>
+                <label for="size-4">(4 x 4)</label>
+                <br>
+                <input type="radio" id="size-6" name="size" value="6" >
+                <label for="size-6">(6 x 6)</label>
+                <br>
+                <input type="button" id="btn" value="ok" >
+            </form>
+            </div>
+    
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html> 
