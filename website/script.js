@@ -9,11 +9,19 @@ let matches = []
 const timeInfo = document.querySelector('#time-display')
 const movesInfo = document.querySelector('#moves-display')
 
+const infoBtn = document.querySelector('#info')
 
+let largeBoard = false
 
 document.querySelector('#btn').addEventListener('click', () => {
    selectSize()
 
+})
+
+
+infoBtn.addEventListener('click', () =>{
+    infoBtn.classList.toggle('expand')
+    document.querySelector('#icon-info').classList.toggle('hidden')
 })
 
 // set up DOM elements
@@ -62,6 +70,7 @@ function startGameSmall() {
 // start game with large board
 
 function startGameLarge() {
+    largeBoard = true
     prepareGame()
     let arrCopy = [...allPairs]
     allPairs.forEach(item => arrCopy.push(item))
@@ -95,7 +104,6 @@ function openCard() {
             noMatch()
         }
     }
-
 }
 
 function match() {              
@@ -131,7 +139,7 @@ function noMatch() {
 // check which board is being used, then disable/enable
 
 function deactivate() {
-    if (document.querySelector('.card-grid-small').children.length > 0) {
+    if (!largeBoard) {
         let cards = document.querySelector('.card-grid-small').children
         Array.prototype.filter.call(cards, function(card){
             card.classList.add('disabled');
@@ -146,7 +154,7 @@ function deactivate() {
 }
 
 function reactivate() {
-    if (document.querySelector('.card-grid-small').children.length > 0) {
+    if (!largeBoard){
         let cards = document.querySelector('.card-grid-small').children
         Array.prototype.filter.call(cards, function(card){
             card.classList.remove('disabled');
@@ -163,7 +171,7 @@ function reactivate() {
 // check if all cards have matched
 
 function finishCheck() {
-    if (document.querySelector('.card-grid-small').children.length > 0) {
+    if (!largeBoard) {
         if(matches.length === document.querySelector('.card-grid-small').children.length) {
             gameEnd()
     } else {
@@ -177,26 +185,40 @@ function finishCheck() {
         clearInterval(interval)
         timeInfo.classList.add('highlighted')
         movesInfo.classList.add('highlighted')
+        const endImg = document.createElement('img')
+
+        if (!largeBoard){
+            setTimeout(() => {
+                document.querySelector('.card-grid-small').appendChild(endImg)
+            }, 1200);
+            }
+        else {
+            setTimeout(() => {
+                document.querySelector('.card-grid-large').appendChild(endImg)
+            }, 1200);
+        }
         if(moves < 30) {
-            document.querySelector('#place-one').classList.remove('hidden')
+            endImg.src = "icons/welldone.svg"
         }
         else if(moves < 32) {
-            document.querySelector('#place-two').classList.remove('hidden')
+            endImg.src = "icons/service.svg"
         }
         else if(moves < 34) {
-            document.querySelector('#place-three').classList.remove('hidden')
+            endImg.src = "icons/feedback.svg"
         }
         else if(moves < 36) {
-            document.querySelector('#place-four').classList.remove('hidden')   
+            endImg.src = "icons/check.svg"
         }
         else if(moves >= 36) {
-            document.querySelector('#place-five').classList.remove('hidden')
-            
+            endImg.src = "icons/lemonade.svg"
+        }
         }
     }
 }
-}
 
+
+
+      
 
 // AUXILIARY FUNCTIONS
 

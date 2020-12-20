@@ -19,6 +19,12 @@ h1 {
     text-shadow: 2px 2px 5px rgb(88, 60, 47);
 }
 
+
+ a {
+    color: #427d80;
+    text-decoration: none;
+}
+
 .size-select{
     background-color: rgb(47, 75, 70);
     color:  rgb(147, 177, 172);
@@ -33,7 +39,8 @@ h1 {
 
 label {
     font-size: .7em;
-    font-family: 'Montserrat'
+    font-family: 'Montserrat';
+    margin: .4em;
 }
 
 input {
@@ -41,7 +48,7 @@ input {
     color: rgb(90, 76, 51);
     background: rgb(184, 157, 107);
     border: none;
-    outline: none
+    outline: none;
 }
 input[type='radio'] { 
     opacity: 0;
@@ -74,6 +81,12 @@ input[type='radio'] {
     padding: .2em;
     border-radius: 5px;
     width: 75px;
+    box-shadow: -4px 5px 28px 0px rgba(0,0,0,0.35);
+}
+
+#btn:active {
+    background: rgb(20, 20, 20);
+    color: white;
 }
 
 .wrapper {
@@ -121,8 +134,8 @@ input[type='radio'] {
 .feedback-icon {
     margin: auto;
     padding: 4em;
-    transition: all 5s ease-in;
     text-align: center;
+    z-index: 1;
 }
 
 
@@ -138,8 +151,17 @@ input[type='radio'] {
     box-shadow: -4px 5px 28px 0px rgba(0,0,0,0.55);
     background: rgb(125, 146, 144);
     user-select: none;
+    position: relative;
 }
 
+.card-grid-small img {
+    height: 250px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 70px;
+    top: 70px;
+}
 .card-grid-large {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -151,6 +173,15 @@ input[type='radio'] {
     box-shadow: -4px 5px 28px 0px rgba(0,0,0,0.55);
     background: rgb(125, 146, 144);
     user-select: none;
+}
+
+.card-grid-large img {
+    height: 300px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 80px;
+    top: 80px;
 }
 
 .card-grid-small div {
@@ -236,4 +267,36 @@ input[type='radio'] {
 #refresh:hover {
     filter: invert(45%) sepia(33%) saturate(904%) hue-rotate(329deg) brightness(98%) contrast(95%);
     cursor: pointer;
+}
+
+ /* INFO BUTTON */
+
+
+#info {
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #b99b62;
+    width: 2.5%;
+    height: 4.6em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evely;
+    align-items: center;
+    transition: all .7s ease-in-out;
+    overflow: hidden;
+    opacity: .8
+}
+#info img {
+    filter: invert(29%) sepia(47%) saturate(459%) hue-rotate(131deg) brightness(101%) contrast(82%);
+    margin: 5px;
+    font-size: 1.3em;
+}
+#icon-info {
+    margin: 5px;
+    font-size: 1.3em;
+    color:rgb(78, 102, 92);
+}
+.expand {
+    width: 15%!important;
 }
