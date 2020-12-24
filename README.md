@@ -1,5 +1,6 @@
 # Memory Game
 
+![memorygame2_screen](https://user-images.githubusercontent.com/61108220/102710662-3115f080-42b4-11eb-8e56-10dad7d0b901.png)
 
 ## Objective
 
