@@ -13,3 +13,7 @@ First the player is prompted to select a board size, after which a grid with car
 ## Structure
 
 The game is simple with one file for vanilla JS, HTML and CSS each, additionally a separate server.js file (uses express, which requires installation through package.json). As the pictures on the cards I have used various unicode characters, which may or may not display properly depending on the device. 
+
+## Links 
+
+- [Deployment](https://sitzelwucht.github.io/memory-card-game/)
